@@ -5,24 +5,14 @@ var btnEar = document.getElementById("create-card");
 var cardCounter = 0;
 
 document.addEventListener("click", function(){
-  // console.log("click here: ", event.target.className);
-  // console.log("trying to get here: ", document.getElementsByClassName("deleteMe")[0].className);
   if (event.target.className == document.getElementsByClassName("deleteMe")[0].className){
     event.target.parentElement.remove();
   };
 });
 
-var cardText = cardEar.addEventListener("keyup", function(){
-  // if(event.keyCode == 13){
-    // event.preventDefault();
-    console.log("text: ", cardEar.value);
-    return cardEar.value;
-  // }
-});
+var cardText = cardEar.addEventListener("keyup", function(){return cardEar.value});
 
-btnEar.addEventListener("click", function(){
-  addCard(cardEar.value);
-})
+btnEar.addEventListener("click", function(){addCard(cardEar.value)});
 
 var newCard = document.getElementById("outputGoesHere")
 
@@ -35,8 +25,3 @@ function addCard(text){
   cardDom +='</p></section><button class="deleteMe">Delete Me!</button></article>';
   newCard.innerHTML += cardDom;
 }
-
-// function removeCard(card){
-  // console.log("removeCard Fired: ");
-
-// }
